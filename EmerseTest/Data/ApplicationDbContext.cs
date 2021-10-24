@@ -23,15 +23,15 @@ namespace EmerseTest.Data
                 new Category
                 {
                     Id = 1,
-                    Name = "Paul",
-                    DisplayOrder = 1,
+                    Name = "Science Fiction",
+                    DisplayOrder = 22,
                 }
                 );
             modelBuilder.Entity<ApplicationType>().HasData(
                 new ApplicationType
                 {
                     Id = 1,
-                    Name = "ComputerScience"
+                    Name = "Visual Novel"
                 }
                 );
         }
