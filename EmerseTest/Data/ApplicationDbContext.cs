@@ -16,5 +16,24 @@ namespace EmerseTest.Data
 
         public DbSet<Category> Category { get; set; }
         public DbSet<ApplicationType> ApplicationType { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().HasData(
+                new Category
+                {
+                    Id = 1,
+                    Name = "Paul",
+                    DisplayOrder = 1,
+                }
+                );
+            modelBuilder.Entity<ApplicationType>().HasData(
+                new ApplicationType
+                {
+                    Id = 1,
+                    Name = "ComputerScience"
+                }
+                );
+        }
     }
 }

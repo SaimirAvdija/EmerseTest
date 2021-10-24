@@ -3,14 +3,16 @@ using EmerseTest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EmerseTest.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211024180149_SeedCategoryTable")]
+    partial class SeedCategoryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,13 +34,6 @@ namespace EmerseTest.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ApplicationType");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "ComputerScience"
-                        });
                 });
 
             modelBuilder.Entity("EmerseTest.Models.Category", b =>
